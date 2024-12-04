@@ -1,9 +1,6 @@
 package com.generation.atariboot.model;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
-
-import org.hibernate.annotations.UpdateTimestamp;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -26,11 +23,10 @@ public class Produto {
 	private String nome;
 
 	@NotBlank(message = "O atributo descrição é obrigatório!")
-	@Size(min = 10, max = 1000, message = "O atributo texto deve conter no mínimo 10 e no máximo 1000 caracteres")
+	@Size(min = 5, max = 1000, message = "O atributo texto deve conter no mínimo 10 e no máximo 1000 caracteres")
 	private String descricao;
 	
-	@NotBlank(message = "O atributo descrição é obrigatório!")
-	@Size(min = 10, max = 1000, message = "O atributo texto deve conter no mínimo 10 e no máximo 1000 caracteres")
+	@NotBlank
 	private BigDecimal  preco;
 
 	public Long getId() {
