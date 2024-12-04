@@ -1,0 +1,11 @@
+package com.generation.atariboot.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.generation.atariboot.model.Produto;
+
+public interface ProdutoRepository extends JpaRepository<Produto, Long>{
+	
+	
+
+}

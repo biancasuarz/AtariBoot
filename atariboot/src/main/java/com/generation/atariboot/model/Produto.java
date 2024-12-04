@@ -1,5 +1,6 @@
 package com.generation.atariboot.model;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 import org.hibernate.annotations.UpdateTimestamp;
@@ -20,15 +21,49 @@ public class Produto {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@NotBlank(message = "O atributo título é obrigatório!")
+	@NotBlank(message = "O atributo nome é obrigatório!")
 	@Size(min = 5, max = 100, message = "O atributo deve conter no mínimo 05 e no máximo 100 caracteres")
-	private String titulo;
+	private String nome;
 
-	@NotBlank(message = "O atributo texto é obrigatório!")
+	@NotBlank(message = "O atributo descrição é obrigatório!")
 	@Size(min = 10, max = 1000, message = "O atributo texto deve conter no mínimo 10 e no máximo 1000 caracteres")
-	private String texto;
+	private String descricao;
+	
+	@NotBlank(message = "O atributo descrição é obrigatório!")
+	@Size(min = 10, max = 1000, message = "O atributo texto deve conter no mínimo 10 e no máximo 1000 caracteres")
+	private BigDecimal  preco;
 
-	@UpdateTimestamp
-	private LocalDateTime data;
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
+	public BigDecimal getPreco() {
+		return preco;
+	}
+
+	public void setPreco(BigDecimal preco) {
+		this.preco = preco;
+	}
+	
 
 }
